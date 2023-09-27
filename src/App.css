@@ -1,13 +1,13 @@
 * {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 .App {
   min-height: 60vh;
   padding-top: 130px;
   padding-bottom: 70px;
-
-  background: linear-gradient(200deg, #ffd43f, #ededed);
+  background: linear-gradient(200deg, #cc2b5e, #753a88);
 }
 @media (min-width: 500px) {
   .App {

@@ -1,4 +1,5 @@
 import React from "react";
+import Badge from "@mui/material/Badge";
 import { img_300, uavailable } from "../../data";
 import "./SingleCotent.css";
 const SingleContent = ({
@@ -11,6 +12,10 @@ const SingleContent = ({
 }) => {
   return (
     <div className="media">
+      <Badge
+        badgeContent={vote_average}
+        color={vote_average > 6 ? "primary" : "secondary"}
+      />
       <img src={poster ? `${img_300}/${poster}` : uavailable} alt="poster" />
       <span className="title">{title}</span>
       <span className="subTitle">

@@ -30,7 +30,11 @@ export default function SimpleBottomNavigation() {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="Trending" icon={<WhatshotIcon />} />
+          <BottomNavigationAction
+            style={{ width: "20px" }}
+            label="Trending"
+            icon={<WhatshotIcon />}
+          />
           <BottomNavigationAction label="Movies" icon={<MovieCreationIcon />} />
           <BottomNavigationAction label="Tv Series" icon={<LiveTvIcon />} />
           <BottomNavigationAction label="Search" icon={<SearchIcon />} />

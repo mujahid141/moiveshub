@@ -6,6 +6,8 @@
   padding-top: 10px;
   position: fixed;
   width: 100%;
+  overflow: hidden;
+  cursor: pointer;
 }
 .logo1 {
   width: 100px;
