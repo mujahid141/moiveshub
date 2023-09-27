@@ -4,7 +4,7 @@ import "./Tremding.css";
 import axios from "axios";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 const Trending = () => {
-  const [page, setPage] = useState(3);
+  const [page, setPage] = useState(1);
   const [movieList, setMovieList] = useState([]);
   const getMovie = async () => {
     const { data } = await axios.get(

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SingleContent from "../../components/SingleContent/SingleContent";
+import CustomPagination from "../../components/Pagination/CustomPagination";
 
 const Movies = () => {
   const [movieList, setMovieList] = useState([]);
   const [genre, setGenre] = useState([]);
+  const [page, setPage] = useState(1);
+
   const getData = async () => {
     const { genre } = await axios.get(
       `https://api.themoviedb.org/3/genre/tv/list?api_key=${process.env.REACT_APP_API_KEY}`
@@ -14,14 +17,14 @@ const Movies = () => {
   };
   const getMovie = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
     setMovieList(data.results);
   };
   useEffect(() => {
     getMovie();
     getData();
-  }, []);
+  }, [page]);
 
   return (
     <>
@@ -39,6 +42,7 @@ const Movies = () => {
           />
         ))}
       </div>
+      <CustomPagination setPage={setPage} />
     </>
   );
 };

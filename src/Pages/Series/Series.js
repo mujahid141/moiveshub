@@ -1,18 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SingleContent from "../../components/SingleContent/SingleContent";
+import CustomPagination from "../../components/Pagination/CustomPagination";
 
 const Series = () => {
   const [movieList, setMovieList] = useState([]);
+  const [page, setPage] = useState(1);
+
   const getMovie = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
     setMovieList(data.results);
   };
   useEffect(() => {
     getMovie();
-  }, []);
+  }, [page]);
 
   return (
     <>
@@ -30,6 +33,7 @@ const Series = () => {
           />
         ))}
       </div>
+      <CustomPagination setPage={setPage} />
     </>
   );
 };

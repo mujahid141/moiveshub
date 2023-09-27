@@ -7,7 +7,7 @@ const darkTheme = createMuiTheme({
   },
 });
 
-const CustomPagination = ({ setPage, numOfPages = 10 }) => {
+export const CustomPagination = ({ setPage, numOfPages = 10 }) => {
   const handleChange = (page) => {
     setPage(page);
     window.scroll(0, 0);
