@@ -21,7 +21,6 @@ const Movies = () => {
   };
 
   const genreforURL = useGenres(selectedGenre);
-  console.log(genreforURL);
   useEffect(() => {
     getMovie();
   }, [page, genreforURL]);
